@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.ChatActivity">
+    <View
+        android:id="@+id/topViewSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4A6572"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/backIconChatActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintBottom_toBottomOf="@+id/topViewSearch"
+        app:layout_constraintStart_toStartOf="@id/topViewSearch"
+        app:layout_constraintTop_toTopOf="@id/topViewSearch"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/userNameChatActivity"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/abeezee"
+        android:text="Username"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/backIconChatActivity"
+        app:layout_constraintStart_toEndOf="@+id/include2"
+        app:layout_constraintTop_toTopOf="@+id/backIconChatActivity" />
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/profile_pic_view"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topViewSearch"
+        app:layout_constraintStart_toEndOf="@+id/backIconChatActivity"
+        app:layout_constraintTop_toTopOf="@+id/topViewSearch" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewChatActivity"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomViewWriteSendMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topViewSearch" />
+
+    <View
+        android:id="@+id/bottomViewWriteSendMessage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerViewChatActivity" />
+
+    <EditText
+        android:id="@+id/messageInputEdittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/edittext_border"
+        android:elevation="4dp"
+        android:fontFamily="@font/abeezee"
+        android:hint="Write message here.."
+        android:maxLength="@integer/google_play_services_version"
+        android:maxLines="5"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="#4A6572"
+        android:textColorHint="#4A6572"
+        app:layout_constraintBottom_toBottomOf="@id/bottomViewWriteSendMessage"
+        app:layout_constraintEnd_toStartOf="@id/sendMessageImageView"
+        app:layout_constraintStart_toStartOf="@id/bottomViewWriteSendMessage" />
+
+    <ImageButton
+        android:id="@+id/sendMessageImageView"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/baseline_send_24"
+        app:layout_constraintBottom_toBottomOf="@id/bottomViewWriteSendMessage"
+        app:layout_constraintEnd_toEndOf="@id/bottomViewWriteSendMessage"
+        app:layout_constraintStart_toEndOf="@id/messageInputEdittext"
+        app:tint="#4A6572" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

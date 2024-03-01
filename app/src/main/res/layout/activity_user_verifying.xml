@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.UserVerifyingActivity">
+
+    <TextView
+        android:id="@+id/textSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/abeezee"
+        android:text="SKIP"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#232F34"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textEnterPhone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/LottieAdmin"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/textEnterPhone"
+        app:layout_constraintEnd_toEndOf="@+id/textEnterPhone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textEnterPhone"
+        app:layout_constraintTop_toBottomOf="@+id/textSkip"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loginlottie" />
+
+    <TextView
+        android:id="@+id/textEnterPhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/abeezee"
+        android:text="OTP Verification"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#232F34"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LottieAdmin" />
+
+    <TextView
+        android:id="@+id/text4digitcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/abeezee"
+        android:gravity="center"
+        android:text="Enter the OTP sent to"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#232F34"
+        app:layout_constraintEnd_toEndOf="@+id/cardViewFacebook"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toBottomOf="@+id/textEnterPhone" />
+
+    <TextView
+        android:id="@+id/numberRetrieved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/abeezee"
+        android:text="7517770046"
+        android:textColor="#232F34"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/text4digitcode"
+
+        app:layout_constraintStart_toEndOf="@+id/text4digitcode"
+        app:layout_constraintTop_toTopOf="@+id/text4digitcode" />
+
+    <com.chaos.view.PinView
+        android:id="@+id/firstPinView"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints="phone"
+        android:cursorVisible="true"
+        android:hint="Hint."
+        android:inputType="phone"
+        android:itemBackground="@color/white"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cursorColor="#A83737"
+        app:cursorWidth="2dp"
+        app:hideLineWhenFilled="true"
+        app:itemCount="6"
+        app:itemHeight="40dp"
+        app:itemRadius="12dp"
+        app:itemSpacing="10dp"
+        app:itemWidth="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/textEnterPhone"
+        app:layout_constraintStart_toStartOf="@+id/textEnterPhone"
+        app:layout_constraintTop_toBottomOf="@+id/text4digitcode"
+        app:lineColor="#4A6572"
+        app:lineWidth="1dp"
+        app:viewType="rectangle" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeOne"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="28dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editTextCodeTwo"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/loginButton"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/text4digitcode" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeTwo"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/editTextCodeOne"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editTextCodeThree"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editTextCodeOne"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextCodeOne" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeThree"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/editTextCodeTwo"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editTextCodeFour"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editTextCodeTwo"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextCodeTwo" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeFour"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/editTextCodeThree"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editTextCodeFive"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editTextCodeThree"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextCodeThree" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeFive"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/editTextCodeFour"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/editTextCodeSix"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editTextCodeFour"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextCodeFour" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCodeSix"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+
+<!--        android:autofillHints="phone"-->
+<!--        android:background="@drawable/edittext_border"-->
+<!--        android:ems="10"-->
+<!--        android:fontFamily="@font/abeezee"-->
+<!--        android:inputType="phone"-->
+<!--        android:maxLength="1"-->
+<!--        android:paddingStart="12dp"-->
+<!--        android:paddingTop="10dp"-->
+<!--        android:paddingEnd="12dp"-->
+<!--        android:paddingBottom="10dp"-->
+<!--        android:textColor="#232F34"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/editTextCodeFive"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/loginButton"-->
+<!--        app:layout_constraintStart_toEndOf="@id/editTextCodeFive"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextCodeFive" />-->
+
+    <View
+        android:id="@+id/viewDidntRecieveCode"
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/verifyAndContinueButton"
+        app:layout_constraintEnd_toEndOf="@+id/firstPinView"
+        app:layout_constraintStart_toStartOf="@+id/firstPinView"
+        app:layout_constraintTop_toBottomOf="@+id/firstPinView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Didn't recieve OTP?"
+        android:fontFamily="@font/abeezee"
+        android:textColor="#344955"
+        android:gravity="end"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toBottomOf="@+id/viewDidntRecieveCode"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/viewDidntRecieveCode"
+        app:layout_constraintTop_toTopOf="@+id/viewDidntRecieveCode" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/abeezee"
+        android:text="RESEND"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#C43127"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/firstPinView"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"/>
+
+    <TextView
+        android:id="@+id/resendingCodeTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/verifyAndContinueButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#344955"
+        android:padding="12dp"
+        android:text="VERIFY AND CONTINUE"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/firstPinView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/firstPinView"
+        app:layout_constraintTop_toBottomOf="@+id/firstPinView" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="30dp"
+        android:background="#344955"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewFacebook"
+        app:layout_constraintEnd_toEndOf="@+id/textEnterPhone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textEnterPhone" />
+
+    <TextView
+        android:id="@+id/textSignOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:text="or Sign In using"
+        android:textAlignment="center"
+        android:textColor="#4A6572"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewFacebook"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/white"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/cardViewGoogle"
+        app:layout_constraintStart_toStartOf="@+id/verifyAndContinueButton">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFacebookSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/facebookImageView"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:src="@drawable/facebooklogo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Facebook"
+                android:textColor="#344955" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewGoogle"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewFacebook"
+        app:layout_constraintEnd_toEndOf="@+id/verifyAndContinueButton"
+        app:layout_constraintStart_toEndOf="@+id/cardViewFacebook"
+        app:layout_constraintTop_toTopOf="@+id/cardViewFacebook">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutGoogleSection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:src="@drawable/googlelogo" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Google"
+                android:textColor="#344955" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textNewUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abeezee"
+        android:gravity="right"
+        android:text="New User?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#344955"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@+id/textRegisterHere"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.333" />
+
+    <TextView
+        android:id="@+id/textRegisterHere"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="REGISTER HERE"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#C43127"
+        android:fontFamily="@font/abeezee"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textNewUser"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/textNewUser"
+        app:layout_constraintTop_toTopOf="@+id/textNewUser" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

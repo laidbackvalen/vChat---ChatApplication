@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4A6572"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4A6572"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="#4A6572"
+                app:layout_collapseMode="none"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintInsideCollapsingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/vchatAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Vchat"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/abeezee"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_collapseMode="none"
+                    app:layout_constraintStart_toStartOf="@id/constraintInsideCollapsingLayout"
+                    app:layout_constraintTop_toTopOf="@id/constraintInsideCollapsingLayout" />
+
+                <ImageView
+                    android:id="@+id/cameraIconMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_camera_alt_24"
+                    app:layout_constraintBottom_toBottomOf="@id/vchatAppName"
+                    app:layout_constraintEnd_toStartOf="@id/searchIconMain"
+                    app:layout_constraintTop_toTopOf="@id/vchatAppName" />
+
+                <ImageView
+                    android:id="@+id/searchIconMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_search_24"
+                    app:layout_constraintBottom_toBottomOf="@id/vchatAppName"
+                    app:layout_constraintEnd_toStartOf="@id/moreOptionsIcon"
+                    app:layout_constraintTop_toTopOf="@id/vchatAppName" />
+
+                <ImageView
+                    android:id="@+id/moreOptionsIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:clickable="true"
+                    android:src="@drawable/baseline_more_vert_24"
+                    app:layout_constraintBottom_toBottomOf="@id/vchatAppName"
+                    app:layout_constraintEnd_toEndOf="@id/constraintInsideCollapsingLayout"
+                    app:layout_constraintTop_toTopOf="@id/vchatAppName" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#4A6572"
+            android:baselineAligned="false"
+            app:layout_anchorGravity="bottom"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabMode="fixed"
+            app:tabTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--AppBarLayout also requires a separate scrolling sibling in order to know when to scroll.
+        The binding is done through the AppBarLayout.ScrollingViewBehavior class,
+        meaning that you should set your scrolling view's behavior to be an instance of AppBarLayout.ScrollingViewBehavior.
+        A string resource containing the full class name is available.-->
+    </androidx.viewpager.widget.ViewPager>
+    <!--    <Button-->
+    <!--        android:id="@+id/signOut"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:text="sign out"-->
+    <!--        />-->
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
